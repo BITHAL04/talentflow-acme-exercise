@@ -1,0 +1,15 @@
+claim,metric,value,method,confidence
+C1,Job Board share of candidates,191/300 = 63.7%,Candidates.Source value counts,High
+C1,Job Board share of applications,236/350 = 67.4%,Applications joined to Candidate.Source,High
+C1,Job Board share of hires (VP's 26.9%),"7/26 = 26.9% (CI95 (13.7, 46.1))","Stage=Hired, by Candidate.Source",High that it reproduces; Low as a basis for decisions (n=26)
+C1,Referral share of hires,7/26 = 26.9%,"Stage=Hired, by Candidate.Source",High that it reproduces; n small
+C1,Job Board app->hire rate,"7/236 = 3.0% (CI95 (1.4, 6.0))",hires / applications per source,Medium-High: CI does not overlap Referral's
+C1,Referral app->hire rate,"7/13 = 53.8% (CI95 (29.1, 76.8))",hires / applications per source,Medium: n=13
+C1,Apps with a named referrer that are NOT attributed to Referral,24/27,Applications.Referred By non-empty vs Candidate.Source,High
+C1,Job Board share of hires if referrer wins,6/26 = 23.1%; Referral 10/26 = 38.5%,Re-attribute any app with Referred By to Referral,Medium: assumes Referred By is the truer field
+C2,Naive acceptance (VP's ~72%),26/36 = 72.2%,Accepted / all offers incl. Pending,High that it reproduces; wrong definition
+C2,Acceptance among decided offers,"26/31 = 83.9% (CI95 (67.4, 92.9))",Accepted / (Accepted + Declined),Medium: n=31
+C2,Bounds if Pending all decline / all accept,72.2% - 86.1%,Pending treated as declined / accepted,High
+C2,'Pending' offers that already have a Decision On date,4/5,Status=Pending and Decision On non-empty,High
+C2,Age of Pending offers at snapshot (days),"min 23, max 225",AS_OF 2026-08-30 minus Offered On,High
+C2,Decline reasons,"{""Counter Offer"": 3, ""Location"": 1, ""Compensation"": 1}",Offers.Decline Reason,High count; too few (n=5) to act on
